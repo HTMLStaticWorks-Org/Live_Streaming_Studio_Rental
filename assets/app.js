@@ -91,7 +91,13 @@
         const store = remember ? localStorage : sessionStorage;
         store.setItem("fh-authenticated", "true");
         store.setItem("fh-client-email", email);
-        store.setItem("fh-client-name", localStorage.getItem("fh-client-name") || email.split("@")[0]);
+        let resolvedName = localStorage.getItem("fh-client-name");
+        if (!resolvedName || resolvedName.toLowerCase() === "client" || resolvedName.toLowerCase() === "demo") {
+          const rawPrefix = email.split("@")[0] || "";
+          const pretty = rawPrefix.replace(/[._-]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+          resolvedName = (pretty && pretty.toLowerCase() !== "demo" && pretty.toLowerCase() !== "client") ? pretty : "Alex Morgan";
+        }
+        store.setItem("fh-client-name", resolvedName);
       } catch (e) {}
       feedback.textContent = "Login successful. Opening your client dashboard…";
       const submit = signInForm.querySelector('button[type="submit"]');
@@ -208,10 +214,15 @@
   // Dashboard greeting and logout.
   const clientName = document.getElementById("dashboardClientName");
   const welcomeName = document.getElementById("dashboardWelcomeName");
-  let storedName = "Client";
-  try { storedName = localStorage.getItem("fh-client-name") || sessionStorage.getItem("fh-client-name") || "Client"; } catch (e) {}
-  if (clientName) clientName.textContent = storedName.toUpperCase();
-  if (welcomeName) welcomeName.textContent = storedName.toUpperCase();
+  let storedName = "Alex Morgan";
+  try {
+    const raw = localStorage.getItem("fh-client-name") || sessionStorage.getItem("fh-client-name");
+    if (raw && raw.trim() && raw.toLowerCase() !== "client" && raw.toLowerCase() !== "client account" && raw.toLowerCase() !== "demo") {
+      storedName = raw.trim();
+    }
+  } catch (e) {}
+  if (clientName) clientName.textContent = storedName;
+  if (welcomeName) welcomeName.textContent = storedName;
   const mobileClientName = document.getElementById("dashboardMobileClientName");
   if (mobileClientName) mobileClientName.textContent = storedName;
   const logout = document.getElementById("logoutBtn");
