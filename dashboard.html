@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Dashboard | FrameHouse Studios</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{const t=localStorage.getItem('fh-theme');if(t)document.documentElement.dataset.theme=t;const d=localStorage.getItem('fh-dir');if(d)document.documentElement.dir=d;}catch(e){}</script>
+</head><body class="dashboard-page">
+<header class="dashboard-topbar">
+ <a class="brand" href="index.html" aria-label="FrameHouse Studios home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9.5 L12 4 L19 9.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 14 V19.5 H9.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 14 V19.5 H14.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14" r="2.2" fill="#ffffff"/><circle cx="12" cy="14" r="4.2" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.65"/></svg></span><span>FRAMEHOUSE<small>CLIENT WORKSPACE</small></span></a>
+ <div class="dashboard-top-actions">
+  <button class="tool-btn theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">◐</button>
+  <button class="tool-btn dir-toggle" type="button" aria-label="Toggle text direction" title="Toggle text direction">⇄</button>
+  <div class="dashboard-profile-pill" title="Client Account">
+   <span class="dashboard-profile-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></span>
+   <span class="dashboard-user" id="dashboardClientName">CLIENT ACCOUNT</span>
+  </div>
+ </div>
+ <button class="dashboard-menu-toggle" id="dashboardMenuToggle" type="button" aria-expanded="false" aria-controls="dashboardMobileMenu" aria-label="Open dashboard menu"><span></span><span></span><span></span></button>
+ <nav class="dashboard-mobile-menu" id="dashboardMobileMenu" aria-label="Dashboard navigation">
+  <div class="dashboard-mobile-menu-head"><span>WORKSPACE</span><span class="dashboard-user" id="dashboardMobileClientName">CLIENT ACCOUNT</span></div>
+  <a class="side-active" href="dashboard.html">▦ &nbsp; Overview</a>
+  <a href="dashboard-bookings.html">▣ &nbsp; My bookings</a>
+  <a href="dashboard-addons.html">✳ &nbsp; Add-ons</a>
+  <a href="dashboard-invoices.html">▤ &nbsp; Invoices</a>
+  <a href="studios.html">⌂ &nbsp; Explore studios</a>
+  <a href="contact.html">✉ &nbsp; Contact support</a>
+  <div class="dashboard-mobile-tools" aria-label="Display controls">
+   <button class="tool-btn theme-toggle icon-only-tool" type="button" aria-label="Toggle theme" title="Toggle theme"><span aria-hidden="true">◐</span></button>
+   <button class="tool-btn dir-toggle icon-only-tool" type="button" aria-label="Toggle text direction" title="Toggle text direction"><span aria-hidden="true">⇄</span></button>
+  </div>
+  <button class="btn btn-outline dashboard-mobile-logout" id="mobileLogoutBtn" type="button">Sign out ↗</button>
+ </nav>
+</header>
+<main class="dashboard-main">
+ <aside class="dashboard-sidebar">
+  <div class="dashboard-sidebar-nav">
+   <div class="sidebar-label">WORKSPACE</div>
+   <a class="side-active" href="dashboard.html">▦ &nbsp; Overview</a>
+   <a href="dashboard-bookings.html">▣ &nbsp; My bookings</a>
+   <a href="dashboard-addons.html">✳ &nbsp; Add-ons</a>
+   <a href="dashboard-invoices.html">▤ &nbsp; Invoices</a>
+   <a href="studios.html">⌂ &nbsp; Explore studios</a>
+   <a href="contact.html">✉ &nbsp; Contact support</a>
+  </div>
+  <div class="dashboard-sidebar-bottom">
+   <button class="btn btn-outline dashboard-sidebar-logout" id="logoutBtn" type="button">Sign out ↗</button>
+  </div>
+ </aside>
+ <section class="dashboard-content">
+  <div class="dashboard-welcome"><div><span class="dashboard-greeting">WELCOME BACK, <b id="dashboardWelcomeName">CLIENT</b></span><span class="eyebrow">CLIENT DASHBOARD / OVERVIEW</span><h1>Your next great session<br><em>starts here.</em></h1><p>Manage your upcoming studio sessions, selected add-ons and invoices from one place.</p></div><a class="btn" href="contact.html">Request a booking ↗</a></div>
+  <div class="dashboard-stats"><article><span>TOTAL BOOKINGS</span><strong>05</strong><small>Across your account</small></article><article><span>UPCOMING SESSIONS</span><strong>02</strong><small>Next session: 20 Nov</small></article><article><span>INVOICES TO VIEW</span><strong>02</strong><small>Demo invoice records</small></article></div>
+  <div class="dashboard-content-grid">
+   <article class="dashboard-card booking-card" id="bookings"><div class="dash-card-heading"><div><span class="eyebrow">YOUR NEXT SESSION</span><h2>Upcoming booking</h2></div><a class="text-link" style="font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase" href="dashboard-bookings.html">All bookings ↗</a></div><div class="booking-detail"><div class="booking-date"><b>20</b><span>NOV<br>2026</span></div><div><h3>Podcast recording session</h3><p>Conversation Room · 10:00 AM – 12:00 PM</p><small>2-hour studio session · Sample booking</small></div></div><div class="booking-actions"><a class="btn btn-outline" href="dashboard-bookings.html">View all bookings ↗</a><a class="text-link" href="contact.html">Request a change ↗</a></div></article>
+   <article class="dashboard-card" id="addons"><div class="dash-card-heading"><div><span class="eyebrow">PERSONALIZE YOUR SESSION</span><h2>Selected add-ons</h2></div><a class="text-link" style="font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase" href="dashboard-addons.html">All add-ons ↗</a></div><label class="addon"><input type="checkbox" checked> Camera operator <b>₹2,500</b></label><label class="addon"><input type="checkbox" checked> Teleprompter <b>₹800</b></label><label class="addon"><input type="checkbox"> Extra microphone <b>₹500</b></label><label class="addon"><input type="checkbox"> Lighting assistant <b>₹1,200</b></label><button class="btn" id="saveAddons">Save selections</button><p class="inline-feedback" id="addonFeedback"></p></article>
+   <article class="dashboard-card invoice-card" id="invoices"><div class="dash-card-heading"><div><span class="eyebrow">BILLING OVERVIEW</span><h2>Recent invoices</h2></div><a class="text-link" style="font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase" href="dashboard-invoices.html">All invoices ↗</a></div><div class="invoice-row"><span><b>FH-2026-018</b><small>Studio Essential · 12 Nov 2026</small></span><strong>₹4,500</strong><button class="text-link invoice-view">View ↗</button></div><div class="invoice-row"><span><b>FH-2026-012</b><small>Podcast Session · 02 Nov 2026</small></span><strong>₹7,800</strong><button class="text-link invoice-view">View ↗</button></div><p class="inline-feedback" id="invoiceFeedback"></p></article>
+   <article class="dashboard-card dash-help"><span class="eyebrow">NEED SOMETHING ELSE?</span><h2>Let’s get it sorted.</h2><p>Ask about a new studio slot, equipment, add-ons or an invoice.</p><a class="btn" href="contact.html">Talk to our team ↗</a></article>
+  </div>
+ </section>
+</main>
+<script src="assets/app.js"></script><button class="back-to-top-btn" id="backToTopBtn" type="button" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+</body></html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Login | FrameHouse Studios</title>
+<meta name="description" content="Sign in to manage FrameHouse studio bookings, add-ons and invoices.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{const t=localStorage.getItem('fh-theme');if(t)document.documentElement.dataset.theme=t;const d=localStorage.getItem('fh-dir');if(d)document.documentElement.dir=d;}catch(e){}</script>
+</head>
+<body class="auth-center-page">
+<div class="auth-page-tools"><button class="tool-btn theme-toggle" aria-label="Toggle light and dark theme">◐</button><button class="tool-btn dir-toggle" aria-label="Toggle left-to-right and right-to-left layout">⇄</button></div>
+<main class="auth-center-shell">
+ <a class="auth-brand-center" href="index.html" aria-label="FrameHouse Studios home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9.5 L12 4 L19 9.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 14 V19.5 H9.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 14 V19.5 H14.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14" r="2.2" fill="#ffffff"/><circle cx="12" cy="14" r="4.2" stroke="#ffffff" stroke-width="1.1" stroke-opacity="0.65"/></svg></span><span>FRAMEHOUSE<small>LIVE STUDIO RENTAL</small></span></a>
+ <section class="auth-center-card">
+  <div class="auth-card-heading"><span class="eyebrow">CLIENT PORTAL</span><h1>Welcome back.</h1><p>Sign in to manage your studio bookings, selected add-ons and invoices.</p></div>
+  <form id="signinForm" class="auth-center-form">
+   <label>Email address<input type="email" name="email" autocomplete="username" placeholder="you@example.com" required></label>
+   <label>Password
+    <div class="password-field-wrap">
+     <input type="password" name="password" autocomplete="current-password" placeholder="Enter your password" minlength="4" required>
+     <button type="button" class="password-toggle-btn" aria-label="Show password" title="Show password">
+      <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <svg class="eye-closed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+     </button>
+    </div>
+   </label>
+   <div class="auth-options auth-options-line"><label class="remember-line"><input type="checkbox" name="remember" checked><span>Remember Me</span></label><a href="mailto:hello@framehouse.studio?subject=Password%20Reset%20Request">Forgot Password?</a></div>
+   <button class="btn auth-center-submit" type="submit">Login to Dashboard <span>↗</span></button>
+   <p class="form-feedback" aria-live="polite"></p>
+  </form>
+  <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+  <div class="auth-social-stack">
+   <button class="google-auth-btn" type="button" id="googleDemoBtn"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.25 5.48-4.73 7.18l7.65 5.93c4.47-4.13 7.12-10.2 7.12-17.58z"/><path fill="#FBBC05" d="M10.54 28.59A14.5 14.5 0 0 1 9.75 24c0-1.59.28-3.13.79-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.54 2.56 10.78l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.47 0 11.91-2.13 15.87-5.87l-7.65-5.93c-2.13 1.43-4.85 2.27-8.22 2.27-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</button>
+   <button class="google-auth-btn apple-auth-btn" type="button" id="appleDemoBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.17c.02 2.18 1.91 2.91 1.93 2.92-.02.05-.3 1.03-.99 2.04-.6.88-1.23 1.75-2.22 1.77-.97.02-1.28-.57-2.39-.57-1.1 0-1.45.55-2.37.59-.95.04-1.67-.95-2.27-1.82-1.23-1.78-2.17-5.03-.91-7.23.62-1.09 1.73-1.78 2.93-1.8.91-.02 1.77.62 2.39.62.61 0 1.75-.77 2.95-.66.5.02 1.9.2 2.8 1.52-.07.04-1.67.98-1.65 2.62ZM14.42 6.16c.5-.6.83-1.43.74-2.26-.72.03-1.59.48-2.1 1.08-.46.53-.86 1.37-.75 2.18.8.06 1.61-.4 2.11-1Z"/></svg>Continue with Apple</button>
+  </div>
+  <p class="auth-signup-prompt">New to FrameHouse? <a href="signup.html">Create an account</a></p>
+  <p class="auth-demo-caption">Demo portal: use any valid email and a password with at least 4 characters. Production authentication requires a connected backend.</p>
+ </section>
+</main>
+<script src="assets/app.js"></script>
+<button class="back-to-top-btn" id="backToTopBtn" type="button" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+</body></html>
